@@ -1,10 +1,27 @@
-## nvidia 드라이버 설치
+## 기본 인터프리터 설치
 
-검색후 추천하는 드라이버로 설치 
 ```sh
-ubuntu-drivers devices
-
+install_base.sh
 ```
+
+## nvidia 드라이버 와 cuda 설치
+
+그래픽드라이버가 설치 되지않는 상태를 확인해야함.  
+드라이버 상태확인 다음과 같은 커멘드로한다.  
+
+```sh
+sudo lshw -c display
+```
+
+driver 이름이 다름과 같이 nouveau 라고 뜨면 나오면 드리이버가 아직설치되지않는 상태이니 이 방법을 사용할수 있다. 그렇지않다면 deb파일로 설치는 불가능하다.  
+configuration: depth=32 driver=nouveau latency=0 resolution=1920,1080  
+
+
+```sh
+bash ./cuda_11_8.sh
+bash ./cudnn__for_11_8.sh
+```
+
 
 예>
 ```
