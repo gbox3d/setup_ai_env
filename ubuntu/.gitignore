@@ -1,2 +1,4 @@
 *.run
 *.tar.gz
+*.pth
+*.pt
